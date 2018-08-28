@@ -3,8 +3,9 @@ swagger: "2.0"
 x-collection-name: Google Compute Engine
 x-complete: 0
 info:
-  title: Google Compute Engine API Get Instance Groups
-  description: Retrieves the list of instance groups and sorts them by zone.
+  title: Google Compute Engine API Get Instance Group Managers
+  description: Retrieves the list of managed instance groups that are contained within
+    the specified region.
   contact:
     name: Google
     url: https://google.com
@@ -76,6 +77,38 @@ paths:
       tags:
       - Instance Group
       - Aggregation
+  /{project}/regions/{region}/instanceGroupManagers:
+    get:
+      summary: Get Instance Group Managers
+      description: Retrieves the list of managed instance groups that are contained
+        within the specified region.
+      operationId: compute.regionInstanceGroupManagers.list
+      x-api-path-slug: projectregionsregioninstancegroupmanagers-get
+      parameters:
+      - in: query
+        name: filter
+        description: Sets a filter expression for filtering listed resources, in the
+          form filter={expression}
+      - in: query
+        name: maxResults
+        description: The maximum number of results per page that should be returned
+      - in: query
+        name: orderBy
+        description: Sorts list results by a certain order
+      - in: query
+        name: pageToken
+        description: Specifies a page token to use
+      - in: path
+        name: project
+        description: Project ID for this request
+      - in: path
+        name: region
+        description: Name of the region scoping this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Instance Group
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

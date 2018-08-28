@@ -1,9 +1,12 @@
+---
 swagger: "2.0"
 x-collection-name: Google Compute Engine
-x-complete: 1
+x-complete: 0
 info:
-  title: Compute Engine
-  description: creates-and-runs-virtual-machines-on-google-cloud-platform-
+  title: Google Compute Engine API Add Instance to Zone Instance Group
+  description: Adds a list of instances to the specified instance group. All of the
+    instances in the instance group must be in the same network/subnetwork. Read  Adding
+    instances for more information.
   contact:
     name: Google
     url: https://google.com
@@ -380,94 +383,17 @@ paths:
           description: OK
       tags:
       - Instance Group
-  /{project}/zones/{zone}/instanceGroups/{instanceGroup}/listInstances:
-    post:
-      summary: Get Instance in Zone Instance Group
-      description: Lists the instances in the specified instance group.
-      operationId: compute.instanceGroups.listInstances
-      x-api-path-slug: projectzoneszoneinstancegroupsinstancegrouplistinstances-post
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: query
-        name: filter
-        description: Sets a filter expression for filtering listed resources, in the
-          form filter={expression}
-      - in: path
-        name: instanceGroup
-        description: The name of the instance group from which you want to generate
-          a list of included instances
-      - in: query
-        name: maxResults
-        description: The maximum number of results per page that should be returned
-      - in: query
-        name: orderBy
-        description: Sorts list results by a certain order
-      - in: query
-        name: pageToken
-        description: Specifies a page token to use
-      - in: path
-        name: project
-        description: Project ID for this request
-      - in: path
-        name: zone
-        description: The name of the zone where the instance group is located
-      responses:
-        200:
-          description: OK
-      tags:
-      - Instance Group
-  /{project}/zones/{zone}/instanceGroups/{instanceGroup}/removeInstances:
-    post:
-      summary: Remove Instance in Zone Instance Group
-      description: Removes one or more instances from the specified instance group,
-        but does not delete those instances.
-      operationId: compute.instanceGroups.removeInstances
-      x-api-path-slug: projectzoneszoneinstancegroupsinstancegroupremoveinstances-post
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: path
-        name: instanceGroup
-        description: The name of the instance group where the specified instances
-          will be removed
-      - in: path
-        name: project
-        description: Project ID for this request
-      - in: path
-        name: zone
-        description: The name of the zone where the instance group is located
-      responses:
-        200:
-          description: OK
-      tags:
-      - Instance Group
-  /{project}/zones/{zone}/instanceGroups/{instanceGroup}/setNamedPorts:
-    post:
-      summary: Set Named Ports for Zone Instance Group
-      description: Sets the named ports for the specified instance group.
-      operationId: compute.instanceGroups.setNamedPorts
-      x-api-path-slug: projectzoneszoneinstancegroupsinstancegroupsetnamedports-post
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/holder'
-      - in: path
-        name: instanceGroup
-        description: The name of the instance group where the named ports are updated
-      - in: path
-        name: project
-        description: Project ID for this request
-      - in: path
-        name: zone
-        description: The name of the zone where the instance group is located
-      responses:
-        200:
-          description: OK
-      tags:
-      - Instance Group
+x-streamrank:
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
+---
